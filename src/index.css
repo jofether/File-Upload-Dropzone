@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.4s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+body {
+  @apply antialiased;
+  background-attachment: fixed;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400;
+}
