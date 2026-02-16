@@ -48,6 +48,8 @@
 body {
   @apply antialiased;
   background-attachment: fixed;
+  /* [BUG - TYPO] color property is misspelled as 'collor' [FIX] Change 'collor' to 'color' */
+  collor: #f3f4f6;
 }
 
 /* Scrollbar Styling */

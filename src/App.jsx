@@ -2,7 +2,8 @@ import React, { useState, useRef } from 'react';
 
 const StatCard = ({ icon, label, value, color }) => (
   <div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-white shadow-lg transform hover:scale-105 transition-transform`}>
-    <div className="flex items-center justify-between">
+    {/* [BUG - LAYOUT] flex-col-reverse reverses card content layout [FIX] Remove -reverse */}
+    <div className="flex flex-col-reverse items-center justify-between">
       <div>
         <p className="text-sm opacity-90">{label}</p>
         <p className="text-2xl font-bold mt-1">{value}</p>
@@ -166,18 +167,20 @@ function App() {
 
       {/* Notification */}
       {notification && (
-        <div className={`fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium animate-slide-in ${
+        <div className={`fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg text-white font-medium animate-slide-in z-10 ${
           notification.type === 'success' ? 'bg-green-500' :
           notification.type === 'error' ? 'bg-red-500' :
           'bg-blue-500'
         }`}>
+          {/* [BUG - LAYERS] z-10 too low, notification hidden behind elements [FIX] Change z-10 to z-50 */}
           {notification.message}
         </div>
       )}
 
       {/* Stats Dashboard */}
       {files.length > 0 && (
-        <div className="w-full max-w-6xl mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-in">
+        <div className="w-full max-w-6xl mb-8 grid grid-cols-2 gap-4 animate-fade-in md:grid-cols-3">
+          {/* [BUG - TYPO] grid-cols-2 is invalid for 3 children (breaks responsive grid) [FIX] Use grid-cols-1 or grid-cols-3 */}
           <StatCard icon="📂" label="Total Files" value={files.length} color="from-blue-500 to-blue-600" />
           <StatCard icon="✅" label="Uploaded" value={uploadedCount} color="from-green-500 to-green-600" />
           <StatCard icon="💾" label="Total Size" value={formatFileSize(totalSize)} color="from-purple-500 to-purple-600" />
@@ -206,8 +209,9 @@ function App() {
               onDrop={handleDrop}
               onClick={() => fileInputRef.current?.click()}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity"></div>
-              <div className="relative z-10 text-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity z-50"></div>
+              <div className="relative z-1 text-center">
+                {/* [BUG - LAYERS] z-50 on background and z-1 on content makes background appear on top [FIX] Change z-50 to z-0 on background, z-1 to z-10 on content */}
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg group-hover:scale-110 transition-transform">
                     <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,8 +220,10 @@ function App() {
                   </div>
                 </div>
                 
-                <p className="text-lg font-semibold text-slate-800">Click to upload or drag and drop</p>
-                <p className="text-sm text-slate-500 mt-2">Maximum file size: 80 MB</p>
+                <p className="text-lg font-semibold text-slate-50">Click to upload or drag and drop</p>
+                {/* [BUG - COLOR/CONTRAST] text-slate-50 (white) on light bg-slate-50 background makes text invisible [FIX] Change to text-slate-800 */}
+                <p className="text-sm text-slate-50 mt-2">Maximum file size: 80 MB</p>
+                {/* [BUG - SPACING] mt-2 creates overlapping text with content above [FIX] Change mt-2 to mt-4 */}
               </div>
 
               <input
@@ -251,7 +257,8 @@ function App() {
                 
                 <div className="space-y-2">
                   {files.map((fileItem, idx) => (
-                    <div key={fileItem.id} className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group">
+                    <div key={fileItem.id} className="flex flex-col-reverse items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group">
+                      {/* [BUG - LAYOUT] flex-col-reverse reverses file item row layout vertically [FIX] Remove -reverse, use flex-row instead */}
                       <div className="flex-shrink-0">
                         <FileTypeIcon type={fileItem.file.type} />
                       </div>
@@ -269,7 +276,8 @@ function App() {
                               style={{ width: `${uploadProgress[fileItem.id] || 0}%` }}
                             ></div>
                           </div>
-                          <span className="text-xs font-semibold text-slate-600 w-8 text-right">{uploadProgress[fileItem.id] || 0}%</span>
+                          <span className="text-xs font-semibold text-slate-100 w-8 text-right">{uploadProgress[fileItem.id] || 0}%</span>
+                          {/* [BUG - COLOR/CONTRAST] text-slate-100 on bg-slate-50 background creates very low contrast [FIX] Change to text-slate-700 */}
                         </div>
                       )}
                       
@@ -302,7 +310,8 @@ function App() {
             )}
 
             {/* ACTION BUTTONS */}
-            <div className="mt-8 flex justify-between items-center gap-3 pt-6 border-t border-slate-200">
+            <div className="mt-8 flex justify-between items-center gap-3 pt-6 border-t border-slate-200 -mb-8">
+              {/* [BUG - SPACING] -mb-8 creates negative margin causing buttons to overlap footer [FIX] Remove negative margin, use mt-8 instead */}
               <div className="text-sm text-slate-500">
                 {files.length > 0 && `${files.length} file${files.length > 1 ? 's' : ''} ready`}
               </div>
