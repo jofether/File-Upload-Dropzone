@@ -2,6 +2,7 @@
   "repository": "File Upload Dropzone",
   "bugs": [
     {
+      "comment": "Bug #1 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -10,13 +11,14 @@
       "buggy_code": "<div className=\"absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity z-50\"></div>",
       "css_selector": ".group-hover\\:opacity-5",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 226,
+        "y": 278,
+        "width": 829,
+        "height": 253
       }
     },
     {
+      "comment": "Bug #2 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -25,13 +27,14 @@
       "buggy_code": "<div className=\"relative z-1 text-center\">",
       "css_selector": ".relative",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 506,
+        "y": 324,
+        "width": 267,
+        "height": 160
       }
     },
     {
+      "comment": "Bug #3 - text-color",
       "bug_category": "Color",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "<p className=\"text-lg font-semibold text-slate-50\">Click to upload or drag and drop</p>",
       "css_selector": ".text-lg",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 506,
+        "y": 428,
+        "width": 267,
+        "height": 28
       }
     },
     {
+      "comment": "Bug #4 - text-color",
       "bug_category": "Color",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
@@ -55,13 +59,14 @@
       "buggy_code": "<p className=\"text-sm text-slate-50 mt-2\">Maximum file size: 80 MB</p>",
       "css_selector": ".text-sm",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 506,
+        "y": 464,
+        "width": 267,
+        "height": 20
       }
     },
     {
+      "comment": "Bug #5 - margin-bottom",
       "bug_category": "Spacing",
       "bug_type": "margin-bottom",
       "file_modified": "src/App.jsx",
@@ -70,13 +75,14 @@
       "buggy_code": "<div className=\"mt-8 flex justify-between items-center gap-3 pt-6 border-t border-slate-200 -mb-8\">",
       "css_selector": ".border-t",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 224,
+        "y": 620,
+        "width": 832,
+        "height": 70
       }
     },
     {
+      "comment": "Bug #6 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -85,13 +91,14 @@
       "buggy_code": "<div className=\"flex flex-col items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group\">",
       "css_selector": ".flex",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 224,
+        "y": 276,
+        "width": 832,
+        "height": 256
       }
     },
     {
+      "comment": "Bug #7 - padding",
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
@@ -100,30 +107,32 @@
       "buggy_code": "<div className=\"mt-12 text-center text-white text-sm opacity-60\">",
       "css_selector": ".opacity-60",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 192,
+        "y": 722,
+        "width": 896,
+        "height": 20
       }
     },
     {
-      "bug_category": "Typo",
-      "bug_type": "text-content",
-      "file_modified": "src/App.jsx",
-      "line_number": 58,
-      "clean_code": "const MAX_SIZE = 800 * 400 * 100;",
-      "buggy_code": "const MAX_SIZE = 800 * 500 * 100;",
-      "css_selector": "none",
-      "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
-      }
-    },
-    {
+      "comment": "Bug #8 - background-color",
       "bug_category": "Color",
       "bug_type": "background-color",
+      "file_modified": "src/App.jsx",
+      "line_number": 274,
+      "clean_code": "<div className=\"w-32 bg-slate-200 rounded-full h-2 overflow-hidden\">",
+      "buggy_code": "<div className=\"w-32 bg-blue-50 rounded-full h-2 overflow-hidden\">",
+      "css_selector": ".w-32",
+      "bounding_box": {
+        "x": 506,
+        "y": 535,
+        "width": 267,
+        "height": 10
+      }
+    },
+    {
+      "comment": "Bug #9 - text-color",
+      "bug_category": "Color",
+      "bug_type": "text-color",
       "file_modified": "src/App.jsx",
       "line_number": 4,
       "clean_code": "<div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-white shadow-lg transform hover:scale-105 transition-transform`}>",
@@ -137,6 +146,7 @@
       }
     },
     {
+      "comment": "Bug #10 - flexbox",
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
@@ -147,8 +157,8 @@
       "bounding_box": {
         "x": 0,
         "y": 0,
-        "width": 0,
-        "height": 0
+        "width": 1280,
+        "height": 720
       }
     }
   ]

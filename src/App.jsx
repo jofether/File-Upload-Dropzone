@@ -263,7 +263,7 @@ function App() {
 
                       {!fileItem.uploaded && (
                         <div className="flex items-center gap-2 flex-shrink-0">
-                          <div className="w-32 bg-slate-200 rounded-full h-2 overflow-hidden">
+                          <div className="w-32 bg-blue-50 rounded-full h-2 overflow-hidden">
                             <div 
                               className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 transition-all"
                               style={{ width: `${uploadProgress[fileItem.id] || 0}%` }}
