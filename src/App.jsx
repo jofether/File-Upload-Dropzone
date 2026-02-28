@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 
 const StatCard = ({ icon, label, value, color }) => (
   <div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-white shadow-lg transform hover:scale-105 transition-transform`}>
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col-reverse items-center justify-between">
       <div>
         <p className="text-sm opacity-90">{label}</p>
         <p className="text-2xl font-bold mt-1">{value}</p>
@@ -251,7 +251,7 @@ function App() {
                 
                 <div className="space-y-2">
                   {files.map((fileItem, idx) => (
-                    <div key={fileItem.id} className="flex items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group">
+                    <div key={fileItem.id} className="flex flex-col-reverse items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group">
                       <div className="flex-shrink-0">
                         <FileTypeIcon type={fileItem.file.type} />
                       </div>
