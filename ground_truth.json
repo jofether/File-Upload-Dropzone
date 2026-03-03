@@ -9,7 +9,7 @@
       "line_number": 161,
       "clean_code": "<div className=\"absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity\"></div>",
       "buggy_code": "<div className=\"absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity z-50\"></div>",
-      "css_selector": ".group-hover\\:opacity-5",
+      "css_selector": "div.absolute.inset-0.bg-gradient-to-r.opacity-0.transition-opacity",
       "bounding_box": {
         "x": 226,
         "y": 278,
@@ -25,7 +25,7 @@
       "line_number": 162,
       "clean_code": "<div className=\"relative z-10 text-center\">",
       "buggy_code": "<div className=\"relative z-1 text-center\">",
-      "css_selector": ".relative",
+      "css_selector": "div.relative.text-center:has(p:has-text(\"Click to upload\"))",
       "bounding_box": {
         "x": 506,
         "y": 324,
@@ -41,7 +41,7 @@
       "line_number": 172,
       "clean_code": "<p className=\"text-lg font-semibold text-slate-800\">Click to upload or drag and drop</p>",
       "buggy_code": "<p className=\"text-lg font-semibold text-slate-50\">Click to upload or drag and drop</p>",
-      "css_selector": ".text-lg",
+      "css_selector": "p:has-text(\"Click to upload or drag and drop\")",
       "bounding_box": {
         "x": 506,
         "y": 428,
@@ -57,7 +57,7 @@
       "line_number": 173,
       "clean_code": "<p className=\"text-sm text-slate-500 mt-2\">Maximum file size: 80 MB</p>",
       "buggy_code": "<p className=\"text-sm text-slate-50 mt-2\">Maximum file size: 80 MB</p>",
-      "css_selector": ".text-sm",
+      "css_selector": "p:has-text(\"Maximum file size: 80 MB\")",
       "bounding_box": {
         "x": 506,
         "y": 464,
@@ -70,15 +70,15 @@
       "bug_category": "Spacing",
       "bug_type": "margin-bottom",
       "file_modified": "src/App.jsx",
-      "line_number": 178,
+      "line_number": 306,
       "clean_code": "<div className=\"mt-8 flex justify-between items-center gap-3 pt-6 border-t border-slate-200\">",
       "buggy_code": "<div className=\"mt-8 flex justify-between items-center gap-3 pt-6 border-t border-slate-200 -mb-8\">",
-      "css_selector": ".border-t",
+      "css_selector": "div.mt-8.flex.border-t:has(button)",
       "bounding_box": {
         "x": 224,
         "y": 620,
         "width": 832,
-        "height": 70
+        "height": 150
       }
     },
     {
@@ -86,10 +86,10 @@
       "bug_category": "Layout",
       "bug_type": "flexbox",
       "file_modified": "src/App.jsx",
-      "line_number": 189,
+      "line_number": 220,
       "clean_code": "<div className=\"flex flex-col-reverse items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group\">",
       "buggy_code": "<div className=\"flex flex-col items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group\">",
-      "css_selector": ".flex",
+      "css_selector": "div.p-4.bg-slate-50.rounded-lg.border.transition-all.group",
       "bounding_box": {
         "x": 224,
         "y": 276,
@@ -102,15 +102,15 @@
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
-      "line_number": 288,
+      "line_number": 328,
       "clean_code": "<div className=\"mt-8 text-center text-white text-sm opacity-60\">",
       "buggy_code": "<div className=\"mt-12 text-center text-white text-sm opacity-60\">",
-      "css_selector": ".opacity-60",
+      "css_selector": "div.text-center.text-white.text-sm.opacity-60",
       "bounding_box": {
         "x": 192,
-        "y": 722,
+        "y": 680,
         "width": 896,
-        "height": 20
+        "height": 40
       }
     },
     {
@@ -118,10 +118,10 @@
       "bug_category": "Color",
       "bug_type": "background-color",
       "file_modified": "src/App.jsx",
-      "line_number": 274,
+      "line_number": 248,
       "clean_code": "<div className=\"w-32 bg-slate-200 rounded-full h-2 overflow-hidden\">",
       "buggy_code": "<div className=\"w-32 bg-blue-50 rounded-full h-2 overflow-hidden\">",
-      "css_selector": ".w-32",
+      "css_selector": "div.p-4.bg-slate-50 .rounded-full.h-2.overflow-hidden",
       "bounding_box": {
         "x": 506,
         "y": 535,
@@ -137,12 +137,12 @@
       "line_number": 4,
       "clean_code": "<div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-white shadow-lg transform hover:scale-105 transition-transform`}>",
       "buggy_code": "<div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-gray-700 shadow-lg transform hover:scale-105 transition-transform`}>",
-      "css_selector": ".text-white",
+      "css_selector": "div.bg-gradient-to-br.rounded-lg.p-4.shadow-lg.transform",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 1280,
-        "height": 758
+        "x": 400,
+        "y": 100,
+        "width": 480,
+        "height": 300
       }
     },
     {
@@ -153,12 +153,12 @@
       "line_number": 6,
       "clean_code": "    <div className=\"flex flex-col-reverse items-center justify-between\">",
       "buggy_code": "    <div className=\"flex flex-col items-center justify-between\">",
-      "css_selector": ".flex",
+      "css_selector": "div.bg-gradient-to-br > div.flex.items-center.justify-between",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 1280,
-        "height": 720
+        "x": 400,
+        "y": 100,
+        "width": 480,
+        "height": 300
       }
     }
   ]
