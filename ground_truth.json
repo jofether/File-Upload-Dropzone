@@ -95,7 +95,7 @@
       "line_number": 220,
       "neg_code": "<div className=\"flex flex-col-reverse items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group\">",
       "pos_code": "<div className=\"flex flex-col items-center gap-4 p-4 bg-slate-50 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all group\">",
-      "css_selector": "div.p-4.bg-slate-50.rounded-lg.border.transition-all.group",
+      "css_selector": "div.flex.flex-col-reverse.rounded-lg",
       "bounding_box": {
         "x": 224,
         "y": 276,
@@ -129,7 +129,7 @@
       "line_number": 248,
       "neg_code": "<div className=\"w-32 bg-slate-200 rounded-full h-2 overflow-hidden\">",
       "pos_code": "<div className=\"w-32 bg-blue-50 rounded-full h-2 overflow-hidden\">",
-      "css_selector": "div.p-4.bg-slate-50 .rounded-full.h-2.overflow-hidden",
+      "css_selector": "div.w-32.rounded-full.h-2",
       "bounding_box": {
         "x": 506,
         "y": 535,
@@ -146,7 +146,7 @@
       "line_number": 4,
       "neg_code": "<div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-white shadow-lg transform hover:scale-105 transition-transform`}>",
       "pos_code": "<div className={`bg-gradient-to-br ${color} rounded-lg p-4 text-gray-700 shadow-lg transform hover:scale-105 transition-transform`}>",
-      "css_selector": "div.bg-gradient-to-br.rounded-lg.p-4.shadow-lg.transform",
+      "css_selector": "div.bg-gradient-to-br.shadow-lg",
       "bounding_box": {
         "x": 400,
         "y": 100,
@@ -163,7 +163,7 @@
       "line_number": 6,
       "neg_code": "    <div className=\"flex flex-col-reverse items-center justify-between\">",
       "pos_code": "    <div className=\"flex flex-col items-center justify-between\">",
-      "css_selector": "div.bg-gradient-to-br > div.flex.items-center.justify-between",
+      "css_selector": "div.bg-gradient-to-br div.flex",
       "bounding_box": {
         "x": 400,
         "y": 100,
